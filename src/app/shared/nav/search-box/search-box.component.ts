@@ -1,8 +1,11 @@
 import {Component} from "@angular/core";
 import {VideoService} from "../../../videos/shared/video.service";
 import {AppState} from "../../app-state.service";
+import {Persona} from "../../persona.service";
 import * as moment from 'moment';
 import {Video} from "../../../videos/shared/video.model";
+import {Oscar} from "../../../videos/shared/oscar.model";
+//import {persona} from "../../persona.service";
 
 @Component({
   moduleId: module.id,
@@ -12,7 +15,7 @@ import {Video} from "../../../videos/shared/video.model";
 })
 export class SearchBoxComponent{
 
-  constructor(private videoService: VideoService, private appState: AppState) {}
+  constructor(private videoService: VideoService, private appState: AppState, private persona:Persona) {}
 
   search(query: string) {
     this.videoService.fetchVideos(query)
@@ -28,6 +31,7 @@ export class SearchBoxComponent{
             item.snippet.description)
         });
       });
+  //
+  //   this.persona.personaActiva = new Oscar("Oscar","Murguia","Hombre");
   }
-
 }

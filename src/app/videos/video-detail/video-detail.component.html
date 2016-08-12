@@ -3,6 +3,11 @@
           height="315"
           frameborder="0"
           allowfullscreen
-          [src]="appState.activeVideo?.videoId | youtubeSafeUrl">
+          [src]="appState.activeVideo?.videoId| youtubeSafeUrl">
   </iframe>
+</div>
+<div>
+  Nombre:   <input type="text" name="fname" value={{persona.personaActiva.nombre}}><br>
+
+  Apellido: <input type="text" name="lname" value={{persona.personaActiva.apellido}}><br>
 </div>

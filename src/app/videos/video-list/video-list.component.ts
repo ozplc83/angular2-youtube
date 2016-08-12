@@ -5,6 +5,8 @@ import {PaginationControlsCmp, PaginatePipe, PaginationService} from "ng2-pagina
 import {Video} from "../shared/video.model";
 import * as moment from 'moment';
 import {AppState} from "../../shared/app-state.service";
+import {Persona} from "../../shared/persona.service";
+import {Oscar} from "../shared/oscar.model";
 
 @Component({
   moduleId: module.id,
@@ -19,12 +21,12 @@ export class VideoListComponent implements OnInit {
 
   videoList:Video[] = [];
 
-  constructor(private videoService:VideoService, private appState:AppState) {
+  constructor(private videoService:VideoService, private appState:AppState, private persona:Persona) {
   }
 
 
   ngOnInit() {
-    this.videoService.fetchVideos('typescript')
+    this.videoService.fetchVideos('adele')
       .subscribe(data => {
         this.appState.videoList = data.items.map(item => {
           return new Video(
@@ -37,6 +39,21 @@ export class VideoListComponent implements OnInit {
             item.snippet.description)
         });
         this.appState.activeVideo = this.appState.videoList[0];
+
+        this.persona.personaLista=[new Oscar("Luis","Filoquio","32"),
+                                   new Oscar("ernesto","Leon","32"),
+                                   new Oscar("juan","Suarez","32"),
+                                   new Oscar("petra","Cartagen","32"),
+                                   new Oscar("jimena","Moreno","32"),
+                                   new Oscar("adolfo","Rojas","32"),
+          new Oscar("david","Ciliberto","32"),
+          new Oscar("carolina","Quilot","32"),
+          new Oscar("pedro","sanchez","32")];
+          this.persona.personaActiva= this.persona.personaLista[5];
+        //console("personas", this.persona.personaLista.length);
+
+
+
       });
   }
 

@@ -5,6 +5,7 @@ import { AppComponent, environment } from './app/';
 import {HTTP_PROVIDERS} from "@angular/http";
 import {VideoService} from "./app/videos/shared/video.service";
 import {AppState} from "./app/shared/app-state.service";
+import {Persona} from "./app/shared/persona.service";
 import {BROWSER_SANITIZATION_PROVIDERS} from "@angular/platform-browser";
 
 if (environment.production) {
@@ -18,6 +19,6 @@ bootstrap(AppComponent, [
   HTTP_PROVIDERS,
   BROWSER_SANITIZATION_PROVIDERS,
   AppState,
-  VideoService,
+  VideoService,Persona
 ]);
 

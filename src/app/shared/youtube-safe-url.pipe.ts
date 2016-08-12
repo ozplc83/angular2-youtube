@@ -12,7 +12,7 @@ export class YoutubeSafeUrlPipe implements PipeTransform {
 
   transform(videoId: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(
-      `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+      `https://www.youtube.com/embed/${videoId}?autoplay=0`);
   }
 
 }

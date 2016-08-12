@@ -1,6 +1,7 @@
 import {Component, Input} from "@angular/core";
 import {Video} from "../shared";
 import {AppState} from "../../shared/app-state.service";
+import {Persona} from "../../shared/persona.service";
 
 @Component({
   moduleId: module.id,

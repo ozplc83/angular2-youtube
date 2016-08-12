@@ -3,9 +3,6 @@ import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {AppState} from "../../shared/app-state.service";
 
-
-
-
 @Injectable()
 export class VideoService {
 
